@@ -1,6 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// Live reloading
+if (module.hot) {
+  module.hot.accept();
+}
+
+const App = () => {
+  return <div>Hey Jude!!!</div>;
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));

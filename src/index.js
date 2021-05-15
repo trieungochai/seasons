@@ -3,11 +3,6 @@ import ReactDOM from "react-dom";
 
 import SeasonDisplay from "./SeasonDisplay";
 
-// Live reloading
-if (module.hot) {
-  module.hot.accept();
-}
-
 class App extends React.Component {
   state = { lat: null, errorMessage: "" };
 

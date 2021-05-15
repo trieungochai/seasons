@@ -6,13 +6,21 @@ if (module.hot) {
   module.hot.accept();
 }
 
-const App = () => {
-  window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
-    (err) => console.log(err)
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { lat: null };
+  }
 
-  return <div>Hey Jude!!!</div>;
-};
+  // React says we have to define render!!
+  render() {
+    window.navigator.geolocation.getCurrentPosition(
+      (location) => console.log(location),
+      (err) => console.log(err)
+    );
+
+    return <div>Latitude: </div>;
+  }
+}
 
 ReactDOM.render(<App />, document.querySelector("#root"));
